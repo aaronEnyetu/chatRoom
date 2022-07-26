@@ -11,7 +11,7 @@ function App() {
   const [messageInForm, setMessageInForm] = useState('');
 
   function setMessages(_messages) {
-    console.log('setting', _messages);
+    console.log('setting', _messages); //eslint-disable-line
     rawSetMessages(_messages);
   }
 
@@ -50,14 +50,14 @@ function App() {
 
         // optimistically just add the most recent message to the messages array
         if (from && message) {
-          console.log('starting with', messages);
-          console.log('and appending', { from, message });
+          console.log('starting with', messages); //eslint-disable-line
+          console.log('and appending', { from, message }); //eslint-disable-line
           setMessages((oldMessages) => [...oldMessages, { from, message }]);
         }
       })
       .subscribe();
 
-  }, []);
+  }, []); //eslint-disable-line
   
   return (
     <div className="App">
